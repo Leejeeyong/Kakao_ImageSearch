@@ -44,7 +44,7 @@ struct APIResquest {
         var request = URLRequest(url: url.url!)
         request.httpMethod = "GET"
         
-        request.addValue("KakaoAK 1282e3598ef03a49d4b91ca1f66bc749", forHTTPHeaderField: "Authorization")
+        request.addValue("KakaoAK", forHTTPHeaderField: "Authorization")
         
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
