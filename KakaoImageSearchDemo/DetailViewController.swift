@@ -28,10 +28,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         // 이미지 세팅
         setImage()
         
-        sitenameLabel.text = "Sitename : "
-        sitenameLabel.text! += (self.document.value(forKeyPath: "display_sitename") as? String)!
-        datetimeLabel.text = "DateTime : "
-        datetimeLabel.text! += (self.document.value(forKeyPath: "datetime") as? String)!
+        if let siteName : String = self.document.value(forKeyPath: "display_sitename") as? String {
+            sitenameLabel.text = "Sitename : " + siteName
+        }
+        if let dateTime : String = self.document.value(forKeyPath: "datetime") as? String {
+            datetimeLabel.text = "DateTime : " + dateTime
+        }
+
     
     }
     
